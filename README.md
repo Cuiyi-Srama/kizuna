@@ -69,6 +69,22 @@
     └── harness-hooks.md  — 世界书条目（4 条，可直接粘贴）
 ```
 
+## 作品集（本仓库 skills/ 目录）
+
+除核心框架外，本仓库还收录配套作品（全部 MIT）：
+
+| # | 作品 | 说明 |
+|---|------|------|
+| 01 | self-evolution-engine | 自进化引擎（5维自我批判，全局强制） |
+| 02 | sub-agent-troubleshooting | 子Agent故障排查手册 |
+| 03 | anti-hallucination | 反幻觉协议（全局强制） |
+| 04 | harness-verifier | 确定性验证器（55行JS，code_runner调用） |
+| 05 | kizuna | 本框架（根目录） |
+| 06 | task-orchestration-system | 任务规划与执行系统 |
+| 07 | self-evolution-action-framework | 自进化行动框架（S1-S5策略） |
+| 08 | enforcement-engine | 强制规则引擎（含RULES_REGISTRY，全局强制） |
+| 09 | chat-grouping | 对话分组整理 |
+
 ## 许可证
 
 MIT © 2026 Cuiyi-Srama — 详见 LICENSE
