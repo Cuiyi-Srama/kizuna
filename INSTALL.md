@@ -10,6 +10,14 @@
    ```
    → 自动检测平台、校验文件完整性、生成 `install_manifest.json` + 世界书条目 + 平台指引
 
+   **平台指定（可选）**：自动检测可能误判时，可手动指定：
+   ```bash
+   python3 install.py --platform claude-code          # 参数方式
+   KIZUNA_PLATFORM=generic python3 install.py         # 环境变量方式
+   ```
+   优先级：`--platform` 参数 > `KIZUNA_PLATFORM` 环境变量 > 自动检测。
+   合法值：`operit` / `claude-code` / `generic`；非法值会警告并回退自动检测。
+
 2. **导入记忆**（读 install_manifest.json，逐条执行）
    - 对每条 `{title, type, content}`：
      - 先按 title 查询是否已存在（避免重复导入）
