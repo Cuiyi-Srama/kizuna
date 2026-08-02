@@ -19,7 +19,32 @@ DOCS = {
     "cross-card-entry.md": ("[Harness] 跨卡入口模板", "reference"),
 }
 
+VALID_PLATFORMS = ("operit", "claude-code", "generic")
+
 def detect_platform():
+    """平台检测：--platform 参数 > KIZUNA_PLATFORM 环境变量 > 自动检测"""
+    # 1. 命令行参数（最高优先级）
+    if len(sys.argv) > 1:
+        p = None
+        if sys.argv[1].startswith("--platform="):
+            p = sys.argv[1].split("=", 1)[1]
+        elif sys.argv[1] == "--platform" and len(sys.argv) > 2:
+            p = sys.argv[2]
+        if p:
+            if p in VALID_PLATFORMS:
+                print("[INFO] Platform specified via --platform: %s" % p)
+                return p
+            print("[WARN] Invalid --platform: %s (valid: %s)" % (p, "/".join(VALID_PLATFORMS)))
+        else:
+            print("[WARN] Unknown arg: %s (usage: python3 install.py [--platform operit|claude-code|generic])" % sys.argv[1])
+    # 2. 环境变量（次优先级）
+    env = os.environ.get("KIZUNA_PLATFORM", "")
+    if env in VALID_PLATFORMS:
+        print("[INFO] Platform via KIZUNA_PLATFORM: %s" % env)
+        return env
+    if env:
+        print("[WARN] Invalid KIZUNA_PLATFORM: %s (valid: %s)" % (env, "/".join(VALID_PLATFORMS)))
+    # 3. 自动检测（兜底）
     if os.path.exists("/sdcard/Download/Operit") or os.path.exists(os.path.expanduser("~/.operit")):
         return "operit"
     if os.path.exists(os.path.expanduser("~/.claude")) or os.path.exists("CLAUDE.md"):
