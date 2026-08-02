@@ -1,7 +1,7 @@
 # Kizuna — 通用 Agent 治理框架
 
 > 仓库：`kizuna` | 名称来源：AI 命名（日语「絆」= 纽带）
-> 基于 Anthropic Claude Code 公开系统提示词源码（515 条）+ 官方工程博客重建。
+> 基于 Anthropic 官方工程博客与社区公开资料重建。
 > **平台中立**：核心方法论与平台无关；文档中的 Operit 实现（query_memory / use_package / 世界书 / enforcement: global）为参考实现，其他平台可映射到对应机制（如 Claude Code 的 CLAUDE.md / hooks）。
 
 ## 这是什么
@@ -16,39 +16,29 @@
 - **跨卡入口模板** — 世界书标准条目，新角色卡 10 秒接入
 - **铁律强制执行清单** — 13 条行为规则 + 3 条用户约束（通用版）
 
-## 安装（4 步，约 10 分钟）
+## 安装（一键 + 一步粘贴，约 3 分钟）
 
 ### 第 1 步：安装技能
 1. 下载本 zip 包
-2. 解压后将 `05-harness-kizuna` 文件夹放入平台 skills 目录（如 `/sdcard/Download/Operit/skills/`）
-3. 确保目录内含 SKILL.md，平台会自动识别
+2. 解压后将 `05-kizuna` 文件夹放入平台 skills 目录（如 `/sdcard/Download/Operit/skills/`）
 
-### 第 2 步：导入记忆（AI 执行）
-让 AI 读取 `references/` 目录并导入记忆库：
+### 第 2 步：一键安装（对 AI 说一句话）
+对 AI 说 **"安装 Kizuna"**，AI 按 `INSTALL.md` 协议自动完成：
+- 运行 `install.py` → 自动检测平台 + 校验完整性 + 生成导入清单
+- 读取 `install_manifest.json` → 自动导入 7 条记忆（[铁律]/[Harness] 前缀）
+- 展示世界书条目 → 你只需粘贴到角色卡（激活方式：常驻）
+- 执行验证清单 → 报告安装结果
 
-```
-请读取 references/ 下所有文档，按 [铁律] / [Harness] 前缀导入记忆库：
-- ironlaw-v4.md        → [铁律] 强制执行清单 v4.0
-- kizuna-overview.md   → [Harness] Kizuna — 架构总览
-- hooks-registry.md    → [Harness] HooksRegistry — 10事件注册表
-- memory-taxonomy.md   → [Harness] MemoryTaxonomy — 4型分类规则
-- memory-selector.md   → [Harness] MemorySelector — 精选规则
-- anti-regression.md   → [Harness] AntiRegression — 反退化闭环
-- cross-card-entry.md  → [Harness] 跨卡入口模板
-```
-
-### 第 3 步：贴世界书（可选但推荐）
-打开当前角色卡 → 世界书 → 新建条目 → 粘贴 `worldbook/harness-hooks.md` 中的条目文本 → 激活方式选【常驻】。
-
-> 不贴世界书也能用：全局强制技能会兜底触发铁律查询；贴了则完整 Hook 自动注入。
-
-### 第 4 步：启用全局强制（可选）
-若平台支持 `enforcement: global`，建议将铁律相关技能设为全局强制，确保跨对话/跨角色卡生效。
+### 第 3 步：平台适配（自动）
+安装器自动检测平台并输出对应指引（见 `adapters/`）：
+- **Operit**：参考实现，完整能力（记忆/世界书/全局强制）
+- **Claude Code**：CLAUDE.md + settings.json hooks（Hook 为系统级执行，更强）
+- **通用平台**：system prompt 注入（软强制，能力受限）
 
 ### 验证
 - 新会话首条消息：AI 是否自动查询了铁律？
 - 说"检查马具"：AI 能否列出 10 事件注册表？
-- 说"导入 Harness 记忆"：AI 能否完整导入 references/？
+- 说"卸载 Kizuna"：按清单删除对应记忆
 
 ## 文件结构
 
@@ -89,4 +79,4 @@
 
 MIT © 2026 Cuiyi-Srama — 详见 LICENSE
 
-> 架构依据 Anthropic Claude Code 公开源码（系统提示词 515 条）与官方工程博客（Harness design for long-running application development, 2026.03）重建。非 Anthropic 官方产品。
+> 架构依据 Anthropic 官方工程博客（Harness design for long-running application development, 2026.03）与社区公开资料重建。非 Anthropic 官方产品。
