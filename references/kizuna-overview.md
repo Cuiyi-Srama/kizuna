@@ -1,6 +1,6 @@
 # Kizuna — 架构总览
 
-> 基于 Anthropic Claude Code 公开系统提示词源码（515条）+ 官方工程博客重建。
+> 基于 Anthropic 官方工程博客与社区公开资料重建。
 > 本条目是 Harness 系统的根节点，安装时导入记忆库。
 
 ## 设计哲学
