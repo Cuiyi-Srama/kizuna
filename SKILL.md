@@ -1,7 +1,7 @@
 ---
 name: kizuna
 description: >-
-  基于 Anthropic Claude Code 公开源码与官方工程博客重建的 AI 治理框架。
+  基于 Anthropic 官方工程博客与社区公开资料重建的 AI 治理框架。
   实现 10 事件 Hook 注册表、4 阶段 Dream 记忆整合、反退化闭环与确定性验证器，
   将"犯错→修正→永久工程化"的循环落地到 Agent 运行环境。
   This skill should be used when the user asks to "搭建Harness"、"实现Hook系统"、
@@ -18,7 +18,7 @@ metadata:
 
 # Kizuna — AI 治理框架
 
-> 依据 Anthropic Claude Code 公开系统提示词源码（515 条）+ 官方工程博客重建。
+> 依据 Anthropic 官方工程博客与社区公开资料重建。
 > 设计哲学：**"每次 agent 犯错，就把修正方案永久工程化进 agent 的运作环境里，让同样的错误不会再发生。"** — Mitchell Hashimoto
 
 Harness 不做"建议"，做"强制执行"。模型推理前，正确的约束已经注入 context。
@@ -177,7 +177,7 @@ Generator 和 Evaluator 在开始实现前协商"完成"的定义：
 
 ## 参考
 
-- Anthropic Claude Code 公开源码（系统提示词 515 条）
+- Anthropic 官方工程博客与社区公开资料
 - Anthropic 官方工程博客（Harness design for long-running application development, 2026.03）
 - Mitchell Hashimoto 核心循环（2026.02）
 
