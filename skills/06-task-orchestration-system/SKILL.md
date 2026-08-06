@@ -112,4 +112,4 @@ assign_task → review(blocking=false) → link_sub_agent
 ## 参考
 
 - 实战案例：2D 平台游戏连击战斗系统（7 角色 9 任务并行）
-- 配套：Harness Kizuna（Hook/反退化/记忆体系）
+- 配套：Kizuna Harness（Hook/反退化/记忆体系）
