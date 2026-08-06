@@ -10,7 +10,7 @@ REFERENCES = os.path.join(BASE, "references")
 WORLDBOOK = os.path.join(BASE, "worldbook")
 
 DOCS = {
-    "ironlaw-v4.md": ("[铁律] 强制执行清单 v4.0", "ironlaw"),
+    "ironlaw-v5.md": ("[铁律] 强制执行清单 v5.0", "ironlaw"),
     "kizuna-overview.md": ("[Harness] Kizuna — 架构总览", "reference"),
     "hooks-registry.md": ("[Harness] HooksRegistry — 10事件注册表", "reference"),
     "memory-taxonomy.md": ("[Harness] MemoryTaxonomy — 4型分类规则", "reference"),
@@ -53,7 +53,7 @@ def detect_platform():
 
 def main():
     platform = detect_platform()
-    print("Kizuna Installer v1.0")
+    print("Kizuna Harness Installer v1.1")
     print("Detected platform:", platform)
     print()
 
