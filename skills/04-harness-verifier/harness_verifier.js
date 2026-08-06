@@ -1,4 +1,4 @@
-// Harness Kizuna — 确定性验证器 v1.0
+// Kizuna Harness — 确定性验证器 v1.0
 // 通过 code_runner 调用，提供代码级确定性检查
 
 class HarnessVerifier {
