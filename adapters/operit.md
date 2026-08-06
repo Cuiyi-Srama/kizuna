@@ -4,7 +4,7 @@
 
 ## 安装方式（完整）
 
-1. 解压包 → 将 `05-kizuna` 放入 skills 目录（如 `/sdcard/Download/Operit/skills/`）
+1. 解压包 → 将 `05-kizuna-harness` 放入 skills 目录（如 `/sdcard/Download/Operit/skills/`）
 2. 对 AI 说 **"安装 Kizuna"** → AI 按 INSTALL.md 协议执行
 3. 粘贴世界书条目到角色卡（常驻激活）
 4. （可选）将铁律相关技能设为 `enforcement: global`
