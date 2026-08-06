@@ -1,5 +1,5 @@
 ---
-name: kizuna
+name: kizuna-harness
 description: >-
   基于 Anthropic 官方工程博客与社区公开资料重建的 AI 治理框架。
   实现 10 事件 Hook 注册表、4 阶段 Dream 记忆整合、反退化闭环与确定性验证器，
@@ -16,7 +16,7 @@ metadata:
   last_reviewed: 2026-08-01
 ---
 
-# Kizuna — AI 治理框架
+# Kizuna Harness — AI 治理框架
 
 > 依据 Anthropic 官方工程博客与社区公开资料重建。
 > 设计哲学：**"每次 agent 犯错，就把修正方案永久工程化进 agent 的运作环境里，让同样的错误不会再发生。"** — Mitchell Hashimoto
