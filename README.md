@@ -1,6 +1,6 @@
-# Kizuna — 通用 Agent 治理框架
+# Kizuna Harness — 通用 Agent 治理框架
 
-> 仓库：`kizuna` | 名称来源：AI 命名（日语「絆」= 纽带）
+> 仓库：`kizuna-harness` | 名称来源：AI 命名（日语「絆」= 纽带）+ Harness（治理框架）
 > 基于 Anthropic 官方工程博客与社区公开资料重建。
 > **平台中立**：核心方法论与平台无关；文档中的 Operit 实现（query_memory / use_package / 世界书 / enforcement: global）为参考实现，其他平台可映射到对应机制（如 Claude Code 的 CLAUDE.md / hooks）。
 
@@ -20,7 +20,7 @@
 
 ### 第 1 步：安装技能
 1. 下载本 zip 包
-2. 解压后将 `05-kizuna` 文件夹放入平台 skills 目录（如 `/sdcard/Download/Operit/skills/`）
+2. 解压后将 `05-kizuna-harness` 文件夹放入平台 skills 目录（如 `/sdcard/Download/Operit/skills/`）
 
 ### 第 2 步：一键安装（对 AI 说一句话）
 对 AI 说 **"安装 Kizuna"**，AI 按 `INSTALL.md` 协议自动完成：
@@ -43,12 +43,12 @@
 ## 文件结构
 
 ```
-05-harness-kizuna/
+05-kizuna-harness/
 ├── SKILL.md              — 主入口（架构 + 使用指引）
 ├── README.md             — 本文件（安装手册）
 ├── LICENSE               — MIT
 ├── references/           — 记忆导入文档集（7 个组件）
-│   ├── ironlaw-v4.md     — 铁律 v4.0（社区版，已泛化个人约束）
+│   ├── ironlaw-v5.md     — 铁律 v5.0（社区版，已泛化个人约束）
 │   ├── kizuna-overview.md
 │   ├── hooks-registry.md
 │   ├── memory-taxonomy.md
@@ -69,7 +69,7 @@
 | 02 | sub-agent-troubleshooting | 子Agent故障排查手册 |
 | 03 | anti-hallucination | 反幻觉协议（全局强制） |
 | 04 | harness-verifier | 确定性验证器（55行JS，code_runner调用） |
-| 05 | kizuna | 本框架（根目录） |
+| 05 | kizuna-harness | 本框架（根目录） |
 | 06 | task-orchestration-system | 任务规划与执行系统 |
 | 07 | self-evolution-action-framework | 自进化行动框架（S1-S5策略） |
 | 08 | enforcement-engine | 强制规则引擎（含RULES_REGISTRY，全局强制） |
